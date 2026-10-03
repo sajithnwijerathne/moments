@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct MomentsApp: App {
+    let dataContainer = DataContainer()
+    
     var body: some Scene {
         WindowGroup {
-            MomentEntryView()
+            ContentView()
+                .environment(dataContainer)
         }
+        .modelContainer(dataContainer.modelContainer)
     }
 }
